@@ -6,7 +6,7 @@ This is a static website for a hardware store, hosted on AWS S3. The website sho
 
 ```
 /index.html           - Main HTML file
-/css/style.css        - Styles for the website
+/style.css        - Styles for the website
 /images/              - Folder containing product images
 ```
 
