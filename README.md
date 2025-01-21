@@ -4,11 +4,8 @@ This is a static website for a hardware store, hosted on AWS S3. The website sho
 
 ## Project Structure
 
-```
-/index.html           - Main HTML file
-/style.css        - Styles for the website
-/images/              - Folder containing product images
-```
+- `/index.html`           - Main HTML file containing the structure and styling of the website.
+- `/images/`              - Folder containing product images.
 
 ## Features
 
@@ -22,7 +19,6 @@ This is a static website for a hardware store, hosted on AWS S3. The website sho
 ## How to Run
 
 1. Clone or download the repository.
-2. Upload the project files (index.html, CSS, images) to your AWS S3 bucket.
+2. Upload the project files (`index.html`, images) to your AWS S3 bucket.
 3. Ensure your S3 bucket is set to public access and is configured for static website hosting.
 4. Access the website via the provided S3 URL.
-
