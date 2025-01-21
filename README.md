@@ -1,7 +1,3 @@
-Since you don't have a license for the project, you can simply omit the License section from the README. Here's an updated version:
-
----
-
 # Hardware Store Website
 
 This is a static website for a hardware store, hosted on AWS S3. The website showcases a range of hardware products, provides customer reviews, and offers contact information.
@@ -30,6 +26,3 @@ This is a static website for a hardware store, hosted on AWS S3. The website sho
 3. Ensure your S3 bucket is set to public access and is configured for static website hosting.
 4. Access the website via the provided S3 URL.
 
----
-
-This version removes the License section, so you should no longer encounter the 404 error.
