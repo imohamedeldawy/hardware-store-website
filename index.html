@@ -4,10 +4,260 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hardware Store</title>
-    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #333;
+            padding: 15px 0;
+            position: relative;
+        }
+
+        .logo {
+            color: white;
+            text-align: center;
+            font-size: 24px;
+            padding: 10px 0;
+        }
+
+        nav ul {
+            list-style: none;
+            text-align: center;
+        }
+
+            nav ul li {
+                display: block;
+                margin: 10px 0;
+            }
+
+                nav ul li a {
+                    color: white;
+                    text-decoration: none;
+                    font-size: 16px;
+                    padding: 5px 10px;
+                    display: block;
+                }
+
+        /* Hero Section */
+        #hero {
+            background-color: #555;
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+        }
+
+            #hero h2 {
+                font-size: 28px;
+                margin-bottom: 15px;
+            }
+
+            #hero p {
+                font-size: 16px;
+                margin-bottom: 20px;
+            }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #f39c12;
+            padding: 12px 25px;
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+
+        /* Products Section */
+        #products {
+            background-color: #f4f4f4;
+            padding: 30px 0;
+        }
+
+            #products .container {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 20px;
+                padding: 20px;
+            }
+
+        .product-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+            .product-card img {
+                width: 100%;
+                height: 200px;
+                object-fit: cover;
+                border-radius: 8px;
+            }
+
+            .product-card h3 {
+                font-size: 18px;
+                margin: 10px 0;
+            }
+
+            .product-card p {
+                flex-grow: 1;
+                margin: 10px 0;
+            }
+
+        .price {
+            color: #e74c3c;
+            font-size: 18px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .product-card button {
+            width: 100%;
+            background-color: #3498db;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+            .product-card button:hover {
+                background-color: #2980b9;
+            }
+
+        /* Reviews Section */
+        #reviews {
+            padding: 30px 0;
+            background-color: white;
+        }
+
+        .review {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+        }
+
+        /* Contact Section */
+        #contact {
+            background-color: #333;
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        .email-link {
+            color: #f39c12;
+            text-decoration: none;
+            display: block;
+            margin: 15px 0;
+        }
+
+        .social-media ul {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+            .social-media ul li {
+                display: block;
+                margin: 10px 0;
+            }
+
+                .social-media ul li a {
+                    color: white;
+                    text-decoration: none;
+                    padding: 5px 0;
+                    display: block;
+                }
+
+        /* About Section */
+        #about {
+            background-color: #f4f4f4;
+            padding: 30px 0;
+        }
+
+            #about p {
+                margin: 15px 0;
+                font-size: 16px;
+            }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+        }
+
+        /* Responsive Grid Layout */
+        @media screen and (min-width: 576px) {
+            #products .container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media screen and (min-width: 768px) {
+            nav ul li {
+                display: inline-block;
+                margin: 0 15px;
+            }
+
+            #products .container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .social-media ul li {
+                display: inline-block;
+                margin: 0 15px;
+            }
+
+            #hero h2 {
+                font-size: 36px;
+            }
+
+            #hero p {
+                font-size: 20px;
+            }
+        }
+
+        @media screen and (min-width: 1024px) {
+            #products .container {
+                grid-template-columns: repeat(4, 1fr);
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+        }
+
+        @media screen and (max-width: 575px) {
+            .container {
+                width: 95%;
+                padding: 10px;
+            }
+        }
+    </style>
 </head>
 <body>
-
     <!-- Header Section -->
     <header>
         <div class="container">
@@ -16,8 +266,8 @@
                 <ul>
                     <li><a href="#home">Home</a></li>
                     <li><a href="#products">Products</a></li>
-                    <li><a href="#reviews">Customer Reviews</a></li>
-                    <li><a href="#contact">Contact Us</a></li>
+                    <li><a href="#reviews">Reviews</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
         </div>
@@ -27,7 +277,7 @@
     <section id="hero">
         <div class="container">
             <h2>Welcome to Our Hardware Store</h2>
-            <p>Your one-stop shop for high-quality tools and accessories!</p>
+            <p>Your one-stop shop for quality tools!</p>
             <a href="#products" class="cta-button">Shop Now</a>
         </div>
     </section>
@@ -39,7 +289,7 @@
 
             <!-- Product 1 -->
             <div class="product-card">
-                <img src="images/01.jpeg" alt="Product 1" class="product-img">
+                <img src="images/01.jpeg" alt="High-Quality Hammer">
                 <h3>High-Quality Hammer</h3>
                 <p>This hammer is designed for durability and performance, perfect for DIY projects and professional work.</p>
                 <p class="price">$10</p>
@@ -48,7 +298,7 @@
 
             <!-- Product 2 -->
             <div class="product-card">
-                <img src="images/02.jpeg" alt="Product 2" class="product-img">
+                <img src="images/02.jpeg" alt="Multi-Purpose Screwdriver">
                 <h3>Multi-Purpose Screwdriver</h3>
                 <p>Ideal for tightening and loosening screws, with a comfortable grip for precision tasks.</p>
                 <p class="price">$5</p>
@@ -57,7 +307,7 @@
 
             <!-- Product 3 -->
             <div class="product-card">
-                <img src="images/03.jpeg" alt="Product 3" class="product-img">
+                <img src="images/03.jpeg" alt="Electric Drill">
                 <h3>Electric Drill</h3>
                 <p>This electric drill is perfect for drilling into wood, metal, and other surfaces with ease.</p>
                 <p class="price">$35</p>
@@ -66,7 +316,7 @@
 
             <!-- Product 4 -->
             <div class="product-card">
-                <img src="images/04.jpeg" alt="Product 4" class="product-img">
+                <img src="images/04.jpeg" alt="Adjustable Wrench">
                 <h3>Adjustable Wrench</h3>
                 <p>This adjustable wrench is designed for various sizes of nuts and bolts, providing a secure grip.</p>
                 <p class="price">$15</p>
@@ -75,7 +325,7 @@
 
             <!-- Product 5 -->
             <div class="product-card">
-                <img src="images/05.jpeg" alt="Product 5" class="product-img">
+                <img src="images/05.jpeg" alt="Pliers">
                 <h3>Pliers</h3>
                 <p>These pliers are essential for gripping, bending, and cutting wire and small parts.</p>
                 <p class="price">$12</p>
@@ -84,7 +334,7 @@
 
             <!-- Product 6 -->
             <div class="product-card">
-                <img src="images/06.jpeg" alt="Product 6" class="product-img">
+                <img src="images/06.jpeg" alt="Hand Saw">
                 <h3>Hand Saw</h3>
                 <p>Sharp, durable saw for cutting wood and other materials with precision.</p>
                 <p class="price">$20</p>
@@ -93,7 +343,7 @@
 
             <!-- Product 7 -->
             <div class="product-card">
-                <img src="images/07.jpeg" alt="Product 7" class="product-img">
+                <img src="images/07.jpeg" alt="Aluminum Ladder">
                 <h3>Aluminum Ladder</h3>
                 <p>Lightweight and durable aluminum ladder for home and office use. Easy to store and transport.</p>
                 <p class="price">$45</p>
@@ -102,7 +352,7 @@
 
             <!-- Product 8 -->
             <div class="product-card">
-                <img src="images/08.jpeg" alt="Product 8" class="product-img">
+                <img src="images/08.jpeg" alt="Work Gloves">
                 <h3>Work Gloves</h3>
                 <p>Comfortable and durable gloves for working with heavy-duty equipment and materials.</p>
                 <p class="price">$8</p>
@@ -111,7 +361,7 @@
 
             <!-- Product 9 -->
             <div class="product-card">
-                <img src="images/09.jpeg" alt="Product 9" class="product-img">
+                <img src="images/09.jpeg" alt="Precision Tape Measure">
                 <h3>Precision Tape Measure</h3>
                 <p>Accurate tape measure for all your measuring needs. Flexible, durable, and easy to read.</p>
                 <p class="price">$7</p>
@@ -120,7 +370,7 @@
 
             <!-- Product 10 -->
             <div class="product-card">
-                <img src="images/10.jpeg" alt="Product 10" class="product-img">
+                <img src="images/10.jpeg" alt="Soldering Iron">
                 <h3>Soldering Iron</h3>
                 <p>High-quality soldering iron for precision electronics work. Features ergonomic handle for comfort.</p>
                 <p class="price">$25</p>
@@ -129,17 +379,16 @@
 
             <!-- Product 11 -->
             <div class="product-card">
-                <img src="images/11.jpeg" alt="Product 11" class="product-img">
+                <img src="images/11.jpeg" alt="Protective Safety Glasses">
                 <h3>Protective Safety Glasses</h3>
                 <p>Protect your eyes while working with tools and machinery. Durable and comfortable fit.</p>
                 <p class="price">$6</p>
                 <button>Add to Cart</button>
             </div>
-
         </div>
     </section>
 
-    <!-- Customer Reviews Section -->
+    <!-- Reviews Section -->
     <section id="reviews">
         <div class="container">
             <h2>Customer Reviews</h2>
@@ -147,12 +396,10 @@
                 <h3>John Doe</h3>
                 <p>"The hammer I bought was very durable and easy to use! It has made my DIY projects much easier."</p>
             </div>
-
             <div class="review">
                 <h3>Jane Smith</h3>
                 <p>"Great customer service and fast delivery. I love my new electric drill!"</p>
             </div>
-
             <div class="review">
                 <h3>Michael Johnson</h3>
                 <p>"I bought several tools from here, and all of them have exceeded my expectations. Highly recommend this store!"</p>
@@ -160,25 +407,25 @@
         </div>
     </section>
 
-    <!-- Contact Us Section -->
+    <!-- Contact Section -->
     <section id="contact">
         <div class="container">
             <h2>Contact Us</h2>
-            <p>We would love to hear from you! If you have any questions, feel free to email us:</p>
+            <p>Questions? Email us:</p>
             <a href="mailto:contact@xmail.com" class="email-link">contact@xmail.com</a>
 
             <div class="social-media">
                 <h3>Follow Us</h3>
                 <ul>
-                    <li><a href="https://facebook.com" target="_blank">Facebook</a></li>
-                    <li><a href="https://twitter.com" target="_blank">Twitter</a></li>
-                    <li><a href="https://instagram.com" target="_blank">Instagram</a></li>
+                    <li><a href="https://facebook.com">Facebook</a></li>
+                    <li><a href="https://twitter.com">Twitter</a></li>
+                    <li><a href="https://instagram.com">Instagram</a></li>
                 </ul>
             </div>
         </div>
     </section>
 
-    <!-- About Us Section -->
+    <!-- About Section -->
     <section id="about">
         <div class="container">
             <h2>About Us</h2>
@@ -187,12 +434,11 @@
         </div>
     </section>
 
-    <!-- Footer Section -->
+    <!-- Footer -->
     <footer>
         <div class="container">
             <p>&copy; 2025 Hardware Store. All rights reserved.</p>
         </div>
     </footer>
-
 </body>
 </html>
